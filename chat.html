@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Figma-Like Tool with New Chat, Enter Link, and File Attachment</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color:purple;
+            padding: 10px;
+            text-align:left;
+        }
+
+        .menu-bar {
+            background-color: #444;
+            color:#fff;
+            display: flex;
+            justify-content: center; /* Center align the buttons */
+            align-items: center; /* Center vertically */
+            padding: 10px;
+        }
+
+        .menu-item {
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        .container {
+            display: flex;
+            flex-grow: 1;
+        }
+
+        .left-sidebar,
+        .right-sidebar {
+            background-color:black;
+            color: #fff;
+            width: 200px;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        .left-sidebar {
+            order: -1; /* Place the left sidebar before the content */
+        }
+
+        .right-sidebar {
+            order: 2; /* Place the right sidebar after the content */
+        }
+
+        .chat-bar {
+            background-color: #555;
+            color:yellowgreen;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        .toolbar {
+            background-color: #555;
+            color: #fff;
+            width: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .canvas {
+            flex-grow: 1;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .shape {
+            width: 50px;
+            height: 50px;
+            background-color: #007bff;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .button {
+            background-color: #007bff;
+            color:palegreen;
+            padding: 10px 20px;
+            margin: 5px 0;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .file-attachment {
+            background-color: #555;
+            color:greenyellow;
+            padding: 10px;
+        }
+
+        .file-input {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+        }
+
+        .enter-link {
+            background-color: #555;
+            color: red;
+            padding: 10px;
+        }
+
+        .link-input {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px
+        }
+
+        /* Centered paragraph in the middle */
+        .centered-paragraph {
+            text-align:center;
+            padding: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ANGOOR AI|FIREWALL</h1>
+    </header>
+    <div class="menu-bar">
+        <button class="button">Get Started</button>
+    </div>
+    <div class="container">
+        <div class="left-sidebar">
+            <button class="button" onclick="openChatPage()">New Chat</button> <!-- "New Chat" button -->
+            <div class="chat-bar">
+                <h3> Your Chat </h3>
+                <!-- Chat content for Chat Bar 1 -->
+            </div>
+        
+            <!-- Add more chat bars as needed -->
+            <div class="centered-text-field">
+                <!-- Text field in the center -->
+                <input type="text" class="text-input" placeholder="Type your message...">
+            </div>
+        </div>
+        <div class="canvas">
+            <!-- Shapes will be added here -->
+        </div>
+        <div class="right-sidebar">
+            <div class="file-attachment">
+                <h3>File Attachment</h3>
+                <input type="file" class="file-input" />
+            </div>
+            <div class="enter-link">
+                <h3>Enter Link</h3>
+                <input type="text" class="link-input" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.querySelector('.canvas');
+
+        function openChatPage() {
+            // Redirect to the chat page (chat.html)
+            window.location.href = 'chat.html';
+        }
+
+        // Function to handle file attachment and link input can be added here
+
+    </script>
+</body>
+</html>
