@@ -22,7 +22,7 @@
 
         .menu-bar {
             background-color: #444;
-            color:#fff;
+            color: #fff;
             display: flex;
             justify-content: center; /* Center align the buttons */
             align-items: center; /* Center vertically */
@@ -41,7 +41,7 @@
 
         .left-sidebar,
         .right-sidebar {
-            background-color:black;
+            background-color: #444;
             color: #fff;
             width: 200px;
             padding: 10px;
@@ -58,7 +58,7 @@
 
         .chat-bar {
             background-color: #555;
-            color:yellowgreen;
+            color: #fff;
             margin-bottom: 10px;
             padding: 10px;
         }
@@ -110,7 +110,7 @@
 
         .file-attachment {
             background-color: #555;
-            color:greenyellow;
+            color: greenyellow;
             padding: 10px;
         }
 
@@ -129,28 +129,21 @@
         .link-input {
             width: 100%;
             padding: 5px;
-            margin-top: 5px
-        }
-.
-        /* Centered paragraph in the middle */
-        .centered-paragraph {
-            text-align:center;
-            padding: 20px;
-            font-size: 18px;
-            color: #333;
+            margin-top: 5px;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>ANGOOR AI|FIREWALL</h1>
-    </header>
+    <h2>ANGOOR AI|FIREWALL</h2>    </header>
+        <p>
     <div class="menu-bar">
         <button class="button">Get Started</button>
     </div>
     <div class="container">
         <div class="left-sidebar">
-            <button class="button" onclick="openChatPage()">New Chat</button> <!-- "New Chat" button -->
+            <button class="button">+New Chat</button> <!-- "New Chat" button -->
             <div class="chat-bar">
                 <h3>Your Chat</h3>
                 <!-- Chat content for Chat Bar 1 -->
@@ -173,20 +166,8 @@
         </div>
     </div>
 
-    <!-- Centered paragraph in the middle -->
-    <div class="centered-paragraph">
-        <p1>Upload docuents links or anything. </p1>
-           <p2> and our chatboat will give you answer of any questions.</p2>
-           
-    </div>
-
     <script>
         const canvas = document.querySelector('.canvas');
-
-        function openChatPage() {
-            // Redirect to the chat page (chat.html)
-            window.location.href = 'chat.html';
-        }
 
         // Function to handle file attachment and link input can be added here
 

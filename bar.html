@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Figma-Like Tool with Chat Sidebar</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            background-color:black;
+            color:purple;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .container {
+            display: flex;
+            flex-grow: 1;
+        }
+
+        .chat-messages {
+            background-color: #444;
+            color: #fff;
+            width: 200px;
+            padding: 10px;
+        }
+
+        .chat-sidebar {
+            background-color: #555;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .toolbar {
+            background-color: #555;
+            color: #fff;
+            width: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .canvas {
+            flex-grow: 1;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .shape {
+            width: 50px;
+            height: 50px;
+            background-color: #007bff;
+        }
+
+        .chat-messages {
+            overflow-y: auto;
+            max-height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ANGOOR AI|FIREWALL</h1>
+    </header>
+    <Slider
+    aria-label="Temperature"
+    defaultValue={30}
+    getAriaValueText={valuetext}
+    valueLabelDisplay="auto"
+    step={10}
+    marks
+    min={10}
+    max={110}
+  />
+  <Slider defaultValue={30} step={10} marks min={10} max={110} disabled />
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>Sidebar</h2>
+            <div class="chat-sidebar">
+                <h3>Chat</h3>
+                <div class="chat-messages">
+                    <!-- Chat messages will be displayed here -->
+                </div>
+                <input type="text" placeholder="Type a message">
+                <button>Send</button>
+            </div>
+        </div>
+        <div class="toolbar">
+            <button>Create Rectangle</button>
+            <button>Create Circle</button>
+            <button>Create Line</button>
+        </div>
+        <div class="canvas">
+            <!-- Shapes will be added here -->
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.querySelector('.canvas');
+        const rectangleButton = document.querySelector('button:nth-of-type(1)');
+        const circleButton = document.querySelector('button:nth-of-type(2)');
+        const lineButton = document.querySelector('button:nth-of-type(3)');
+
+        rectangleButton.addEventListener('click', createRectangle);
+        circleButton.addEventListener('click', createCircle);
+        lineButton.addEventListener('click', createLine);
+
+        function createRectangle() {
+            const rectangle = document.createElement('div');
+            rectangle.classList.add('shape');
+            canvas.appendChild(rectangle);
+        }
+
+        function createCircle() {
+            const circle = document.createElement('div');
+            circle.classList.add('shape');
+            circle.style.borderRadius = '50%';
+            canvas.appendChild(circle);
+        }
+
+        function createLine() {
+            const line = document.createElement('div');
+            line.classList.add('shape');
+            line.style.height = '2px';
+            line.style.backgroundColor = 'black';
+            canvas.appendChild(line);
+        }
+    </script>
+</body>
+</html>
